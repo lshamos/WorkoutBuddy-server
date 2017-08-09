@@ -25,12 +25,12 @@ exercisesRouter.post('/', (req, res) => {
 exercisesRouter.patch('/:id/sets', (req, res) => {
   console.log('patching workout');
   console.log(req.body)
-
-  // const editNewExercise = exercise.findByIdAndUpdate(req.body)
-  // editNewExercise._user = req.user._id
-  // editNewExercise.save((err, exercise) => {
-  //   res.json({message: 'exercise updated', success: true, exercise})
-  // })
+  Exercise.findById(req.params.id, (err, exercise) => {
+    exercise.sets.push(req.body)
+    exercise.save((err, updatedExercise) => {
+      res.json({success: true, message: "Added set to exercise.", updatedExercise})
+    })
+  })
 })
 
 exercisesRouter.delete('/workout', (req, res) => {
