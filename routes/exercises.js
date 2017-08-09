@@ -19,7 +19,7 @@ exercisesRouter.post('/', (req, res) => {
   newExercise.save((err, exercise) => {
     res.json({message: 'exercise created', success: true, exercise})
   })
-
+})
 
 // /api/exercises/:id/sets
 exercisesRouter.patch('/:id/sets', (req, res) => {
@@ -39,7 +39,7 @@ exercisesRouter.delete('/workout', (req, res) => {
   res.json({message: 'exercise deleted'})
 })
 
-})
+
 
 
 module.exports = exercisesRouter
