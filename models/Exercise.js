@@ -1,6 +1,7 @@
 const
 mongoose = require('mongoose'),
 setSchema = new mongoose.Schema({
+  lbs: Number,
   reps: Number
 }),
 exerciseSchema = new mongoose.Schema({
@@ -11,6 +12,7 @@ exerciseSchema = new mongoose.Schema({
 
 const Exercise = mongoose.model('Exercise', exerciseSchema)
 module.exports = Exercise
+
 
 // Exercise.find({_user: req.user._id}, (err, exercises) => {
 //   console.log(exercises)
