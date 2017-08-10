@@ -5,8 +5,9 @@ const Exercise = require('../models/Exercise')
 exercisesRouter.get('/', (req, res) => {
   console.log('getting workout');
 
-  Exercise.find({_user: req.user._id},
+  Exercise.find({_user: req.user._id}).populate('sets').exec(
     (err, exercises) => {
+      console.log(exercises);
     res.json(exercises)
   })
 })
