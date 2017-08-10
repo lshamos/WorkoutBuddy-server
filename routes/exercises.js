@@ -34,10 +34,11 @@ exercisesRouter.patch('/:id/sets', (req, res) => {
   })
 })
 
-exercisesRouter.delete('/workout', (req, res) => {
-  const deleteNewExercise = new Exercise(req.body)
-  deleteNewExercise._user = req.user._id
-  res.json({message: 'exercise deleted'})
+exercisesRouter.delete('/:id', (req, res) => {
+  console.log("Delete request receive for:", req.params.id)
+  // const deleteNewExercise = new Exercise(req.body)
+  // deleteNewExercise._user = req.user._id
+  // res.json({message: 'exercise deleted'})
 })
 
 
