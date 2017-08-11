@@ -77,7 +77,7 @@ app.use(verifyToken)
 app.get('/protected', (req, res) => {
   console.log("Current user:")
   console.log(req.user)
-  res.json({message: "You are in the VIP."})
+  res.json({message: "You are in."})
 })
 
 app.use('/api/exercises', exercisesRoutes)
